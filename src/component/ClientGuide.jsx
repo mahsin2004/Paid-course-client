@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ClientGuide = () => {
   return (
-    <div className="py-10 lg:py-28 px-8 max-w-[1440px] mx-auto ">
+    <div className="py-10 lg:py-16 px-8 max-w-[1440px] mx-auto ">
       <div className="lg:flex lg:gap-6 lg:justify-between lg:items-center">
         <div className="">
           <img

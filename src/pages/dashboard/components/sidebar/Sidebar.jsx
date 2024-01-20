@@ -12,7 +12,7 @@ const Sidebar = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="">
+    <div className="fixed h-full">
       <div className="hidden lg:block">
         <div className="flex flex-col justify-center items-center pt-4">
           <img

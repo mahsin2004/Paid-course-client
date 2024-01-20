@@ -1,7 +1,7 @@
 const NewsLetter = () => {
   return (
     <div className="">
-      <div className="max-w-[1440px] px-4 py-6 sm:px-6 lg:px-10 lg:pb-28 mx-auto">
+      <div className="max-w-[1440px] px-4 py-6 sm:px-6 lg:px-10 lg:pb-[86px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-6">
           <a className="group relative block" href="#">
             <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900 before:z-[-1]">

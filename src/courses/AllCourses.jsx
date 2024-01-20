@@ -3,8 +3,8 @@ import CourseCart from "./CourseCart";
 
 const AllCourses = () => {
   const [courses, setCourses] = useState([]);
-  // const [filteredJobs, setFilteredJobs] = useState([]);
-  // const [noDataFound, setNoDataFound] = useState(false);
+  const [filterCourse, setFilterCourse] = useState([]);
+  const [noDataFound, setNoDataFound] = useState(false);
   useEffect(() => {
     document.title = "All Courses | Paid Courses";
     fetch("/data.json")
@@ -12,23 +12,23 @@ const AllCourses = () => {
       .then((data) => setCourses(data));
   }, []);
 
-  // const takeValue = (e) => {
-  //   e.preventDefault();
-  //   const from = e.target;
-  //   const name = from.name.value;
-  //   from.reset();
-  //   const filterJobs = jobs.filter((job) =>
-  //     job.job_title.toLowerCase().includes(name.toLowerCase())
-  //   );
+  const takeValue = (e) => {
+    e.preventDefault();
+    const from = e.target;
+    const name = from.name.value;
+    from.reset();
+    const filterCourse = courses?.filter((course) =>
+      course.name.toLowerCase().includes(name.toLowerCase()) || course.instructor.toLowerCase().includes(name.toLowerCase())
+    );
 
-  //   if (filterJobs.length === 0) {
-  //     setNoDataFound(true);
-  //   } else {
-  //     setNoDataFound(false);
-  //   }
+    if (filterCourse.length === 0) {
+      setNoDataFound(true);
+    } else {
+      setNoDataFound(false);
+    }
 
-  //   setFilteredJobs(filterJobs);
-  // };
+    setFilterCourse(filterCourse);
+  };
 
   return (
     <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-8 md:py-10 lg:py-14">
@@ -39,7 +39,7 @@ const AllCourses = () => {
         </h1>
         <div className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
           <div className="w-full sm:w-auto mx-auto">
-            <form className="grid grid-cols-10 gap-3">
+            <form onSubmit={takeValue} className="grid grid-cols-10 gap-3">
               <label className="sr-only ">Search</label>
               <input
                 type="text"
@@ -69,21 +69,17 @@ const AllCourses = () => {
       </div>
 
       <div>
-        {/* {filteredJobs.length > 0 ? (
-          filteredJobs.map((job) => (
-            <CourseCart key={job._id} job={job}></CourseCart>
+        {filterCourse.length > 0 ? (
+          filterCourse.map((course) => (
+            <CourseCart key={course.id} course={course}></CourseCart>
           ))
         ) : noDataFound ? (
           <div className="text-center py-10">
-            <p className="text-4xl text-red-400">No Jobs Found</p>
+            <p className="text-4xl text-red-400">No Courses Found</p>
           </div>
         ) : (
-          courses.map((job) => <CourseCart key={job._id} job={job}></CourseCart>)
-        )} */}
-
-        {courses.map((course) => (
-          <CourseCart key={course.id} course={course}></CourseCart>
-        ))}
+          courses.map((course) => <CourseCart key={course.id} course={course}></CourseCart>)
+        )}
       </div>
     </div>
   );

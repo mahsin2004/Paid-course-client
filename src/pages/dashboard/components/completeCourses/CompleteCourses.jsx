@@ -15,7 +15,7 @@ const CompleteCourses = () => {
   );
   console.log(course);
   return (
-    <div className="px-10 pt-8 pb-10">
+    <div className="px-10 pt-8 pb-10 min-h-screen">
       {course.map((course) => (
         <Cart2 key={course.id} course={course}></Cart2>
       ))}

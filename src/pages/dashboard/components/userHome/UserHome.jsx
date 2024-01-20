@@ -14,7 +14,7 @@ const UserHome = () => {
     const course = courses?.filter(course => course.enrollmentStatus === "True" && course.completeCourse === "none")
     console.log(course)
     return (
-        <div className="px-10 pt-8 pb-10">
+        <div className="px-10 pt-8 pb-10 m-screen">
             {course.map(course => <Cart1 key={course.id} course={course}></Cart1>)}
         </div>
     );
