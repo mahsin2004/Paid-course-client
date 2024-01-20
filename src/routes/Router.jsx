@@ -5,7 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
 import PrivetRoute from "./PrivetRoute";
-import Details from "../component/Details";
+import Details from "../courses/Details";
 import AllCourses from "../courses/AllCourses";
 import Dashboard from "../pages/dashboard/Dashboard";
 import UserHome from "../pages/dashboard/components/userHome/UserHome";
@@ -33,7 +33,7 @@ const Router = createBrowserRouter([
             <Details />
           </PrivetRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+        loader: ({ params }) => fetch(`/details/${params.id}`),
       },
     ],
   },
