@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hook/useAuth";
 import Social from "../component/Social";
 import { useEffect } from "react";
@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser, profileUpdate } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = 'Register | Paid Courses'
@@ -57,6 +58,7 @@ const Register = () => {
         profileUpdate(name, photo).then(() => {
           window.location.reload();
         });
+        navigate("/");
       })
       .catch((error) =>
         Swal.fire({
