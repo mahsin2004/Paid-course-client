@@ -1,8 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import useAuth from "../hook/useAuth";
 import Social from "../component/Social";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { userLogin } = useAuth();
@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = 'Log in | Online Jobs'
+    document.title = 'Log In | Paid Courses'
   },[])
 
   const handleLogin = (e) => {
@@ -22,12 +22,15 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user.email);
-        toast.success("login successfully");
         navigate(location?.state ? location.state : "/");
       })
-      .catch((error) => {
-        toast.error(error.code);
-      });
+      .catch((error) => Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 1500,
+      }));
   };
 
   return (

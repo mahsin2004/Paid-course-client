@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import useAuth from "../hook/useAuth";
 import Social from "../component/Social";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser, profileUpdate } = useAuth();
 
   useEffect(() => {
-    document.title = 'Register | Online Jobs'
+    document.title = 'Register | Paid Courses'
   },[])
 
   const handleRegister = (e) => {
@@ -20,17 +20,35 @@ const Register = () => {
     const photo = form.photo.value;
 
     if (password.length < 6) {
-      toast.error("Password should be 6 characters or more");
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "Password should be 6 characters or more",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       return;
     }
 
     if (!/[A-Z]/.test(password)) {
-      toast.error("Password should have at least one capital letter");
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "Password should have at least one capital letter",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       return;
     }
 
     if (!/[!@#$%^&*()_+{}[\]:;<>,/.?~\\]/.test(password)) {
-      toast.error("Password should have at least one special character");
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "Password should have at least one special character",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       return;
     }
 
@@ -39,16 +57,21 @@ const Register = () => {
         profileUpdate(name, photo).then(() => {
           window.location.reload();
         });
-        toast.success("user create successfully");
       })
-      .catch((error) => {
-        toast.error(error.code);
-      });
+      .catch((error) =>
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: error.message,
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      );
   };
 
   return (
     <div>
-      <div className="dark:bg-slate-900 bg-gray-100 flex items-center pb-16 pt-6">
+      <div className="dark:bg-slate-900 h-screen bg-gray-100 flex items-center pb-16 pt-6">
         <div className="w-full max-w-[800px]  mx-auto p-7">
           <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
             <div className="pt-4 px-4 sm:px-7 sm:pt-7">

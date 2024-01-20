@@ -8,42 +8,73 @@ import PrivetRoute from "./PrivetRoute";
 import Details from "../component/Details";
 import Update from "../component/Update";
 import AllCourses from "../courses/AllCourses";
+import Dashboard from "../pages/dashboard/Dashboard";
+import UserHome from "../pages/dashboard/components/userHome/UserHome";
+import CompleteCourses from "../pages/dashboard/components/completeCourses/CompleteCourses";
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <Error></Error>,
-    element: <Root></Root>,
+    errorElement: <Error />,
+    element: <Root />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
+
       {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
-      {
-        path: "/courses", 
-        element: <AllCourses />
+        path: "/courses",
+        element: <AllCourses />,
       },
       {
         path: "/details/:id",
         element: (
           <PrivetRoute>
-            <Details></Details>
+            <Details />
           </PrivetRoute>
         ),
         loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
       },
       {
         path: "/update/:id",
-        element: <Update></Update>,
+        element: <Update />,
         loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "dashboard",
+    errorElement: <Error />,
+    element: (
+      <PrivetRoute>
+        <Dashboard />
+      </PrivetRoute>
+    ),
+    children: [
+      {
+        path: "userHome",
+        element: (
+          <PrivetRoute>
+            <UserHome />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "CompleteCourses",
+        element: (
+          <PrivetRoute>
+            <CompleteCourses />
+          </PrivetRoute>
+        ),
       },
     ],
   },

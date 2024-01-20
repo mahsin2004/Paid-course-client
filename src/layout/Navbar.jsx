@@ -36,7 +36,7 @@ const Navbar = () => {
       {user ? (
         <>
           <NavLink
-            to="dashboard/userDashboard"
+            to="/dashboard/userHome"
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-red-400" : ""
             }
@@ -111,7 +111,7 @@ const Navbar = () => {
                       <p className="text-[12px]">{user?.email}</p>
                     </div>
                   </div>
-                  <img className="w-8 rounded-full" src={user?.photoURL}></img>
+                  <img className="w-[42px] rounded-full" src={user?.photoURL}></img>
                 </div>
               </>
             ) : (

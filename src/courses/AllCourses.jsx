@@ -8,7 +8,7 @@ const AllCourses = () => {
   const [noDataFound, setNoDataFound] = useState(false);
   const axiosSecure = useAxiosSecure();
   useEffect(() => {
-    document.title = "All Jobs | Online Jobs"
+      document.title = 'All Courses | Paid Courses'
     axiosSecure.get("/jobs").then((res) => {
       setJobs(res.data);
       console.log(res);

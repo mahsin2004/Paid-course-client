@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   useEffect(() => {
-    document.title = 'Error | Online Jobs'
+    document.title = 'Error | Paid Courses'
   },[])
 
   return (
