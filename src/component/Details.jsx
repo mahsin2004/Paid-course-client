@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useAxiosSecure from "../hook/useAxiosSecure";
 import useAuth from "../hook/useAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
 const Details = () => {
   const { user } = useAuth();
   const [jobs, setJobs] = useState([]);
   const [applied, setApplied] = useState([]);
   const { id } = useParams();
-  const axiosSecure = useAxiosSecure();
 
   //Today Date
   const currentDate = new Date();
@@ -19,19 +18,19 @@ const Details = () => {
   console.log(todayDate);
 
   useEffect(() => {
-    axiosSecure.get("/applied").then((res) => {
+    axios.get("/applied").then((res) => {
       setApplied(res.data);
       console.log(res);
     });
-  }, [axiosSecure]);
+  }, []);
   console.log(applied)
 
   useEffect(() => {
-    axiosSecure.get("/jobs").then((res) => {
+    axios.get("/jobs").then((res) => {
       setJobs(res.data);
       console.log(res);
     });
-  }, [axiosSecure]);
+  }, []);
 
   const job = jobs?.find((job) => job._id === id);
   const addedId = applied?.find(ap => ap.id === id);
@@ -104,20 +103,7 @@ console.log(alreadyAdded);
       return;
     }
 
-    // if (!(todayDate < applicationDeadline[0])) {
-    //   const modal = document.getElementById("my_modal_1");
-    //   modal.close();
-    //   from.reset();
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Application Deadline Over",
-    //     text: "Failed",
-    //     confirmButtonText: "OK",
-    //   });
-    //   return;
-    // }
-
-    axiosSecure.post("/applied", apply).then((res) => {
+    axios.post("/applied", apply).then((res) => {
       console.log(res.data);
       const modal = document.getElementById("my_modal_1");
       modal.close();

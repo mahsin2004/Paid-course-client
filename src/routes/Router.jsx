@@ -6,7 +6,6 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import PrivetRoute from "./PrivetRoute";
 import Details from "../component/Details";
-import Update from "../component/Update";
 import AllCourses from "../courses/AllCourses";
 import Dashboard from "../pages/dashboard/Dashboard";
 import UserHome from "../pages/dashboard/components/userHome/UserHome";
@@ -34,11 +33,6 @@ const Router = createBrowserRouter([
             <Details />
           </PrivetRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
-      },
-      {
-        path: "/update/:id",
-        element: <Update />,
         loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
       },
     ],

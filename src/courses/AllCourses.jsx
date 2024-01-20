@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import useAxiosSecure from "../hook/useAxiosSecure";
 import CourseCart from "./CourseCart";
+import axios from "axios";
 
 const AllCourses = () => {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [noDataFound, setNoDataFound] = useState(false);
-  const axiosSecure = useAxiosSecure();
   useEffect(() => {
-      document.title = 'All Courses | Paid Courses'
-    axiosSecure.get("/jobs").then((res) => {
+    document.title = "All Courses | Paid Courses";
+    axios.get("/jobs").then((res) => {
       setJobs(res.data);
       console.log(res);
     });
-  }, [axiosSecure]);
+  }, []);
 
   const takeValue = (e) => {
     e.preventDefault();
@@ -37,7 +36,7 @@ const AllCourses = () => {
     <div className="max-w-[1440px] mx-auto px-6 lg:px-16 py-14">
       <div className="mb-14">
         <h1 className="text-2xl lg:text-4xl font-medium text-center">
-        Search By Job Title
+          Search By Job Title
         </h1>
         <div className="mt-5 lg:mt-8 flex flex-col items-center gap-2 sm:flex-row sm:gap-3">
           <div className="w-full sm:w-auto mx-auto">
@@ -74,11 +73,17 @@ const AllCourses = () => {
         </div>
       </div>
       <div>
-        {filteredJobs.length > 0
-          ? filteredJobs.map((job) => (
-              <CourseCart key={job._id} job={job}></CourseCart>
-            )) : noDataFound ? <div className="text-center py-10"><p className="text-4xl text-red-400">No Jobs Found</p></div>
-          : jobs.map((job) => <CourseCart key={job._id} job={job}></CourseCart>)}
+        {filteredJobs.length > 0 ? (
+          filteredJobs.map((job) => (
+            <CourseCart key={job._id} job={job}></CourseCart>
+          ))
+        ) : noDataFound ? (
+          <div className="text-center py-10">
+            <p className="text-4xl text-red-400">No Jobs Found</p>
+          </div>
+        ) : (
+          jobs.map((job) => <CourseCart key={job._id} job={job}></CourseCart>)
+        )}
       </div>
     </div>
   );

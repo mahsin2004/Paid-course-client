@@ -4,11 +4,12 @@
         "name": "Introduction to React Native",
         "instructor": "John Doe",
         "description": "Learn the basics of React Native development and build your first mobile app.",
-        "enrollmentStatus": "Open",
+        "enrollmentStatus": "false",
         "thumbnail": "your.image.here",
         "duration": "8 weeks",
         "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
         "location": "Online",
+        "completeCourse": "none",
         "prerequisites": [
             "Basic JavaScript knowledge",
             "Familiarity with React"
@@ -38,11 +39,12 @@
         "name": "Web Development Fundamentals",
         "instructor": "Jane Smith",
         "description": "Explore the basics of web development and build responsive websites.",
-        "enrollmentStatus": "Closed",
+        "enrollmentStatus": "true",
         "thumbnail": "your.image.here",
         "duration": "10 weeks",
         "schedule": "Mondays and Wednesdays, 7:00 PM - 9:00 PM",
-        "location": "In-person",
+        "location": "Online",
+        "completeCourse": "none",
         "prerequisites": [
             "HTML",
             "CSS basics"
@@ -72,11 +74,12 @@
         "name": "Data Science Essentials",
         "instructor": "Alex Johnson",
         "description": "Dive into the world of data science and learn essential skills for analysis.",
-        "enrollmentStatus": "In Progress",
+        "enrollmentStatus": "false",
         "thumbnail": "your.image.here",
         "duration": "12 weeks",
         "schedule": "Tuesdays and Fridays, 5:00 PM - 7:00 PM",
         "location": "Online",
+        "completeCourse": "none",
         "prerequisites": [
             "Basic Python knowledge",
             "Statistics basics"
@@ -106,11 +109,12 @@
         "name": "Mobile App Development with Flutter",
         "instructor": "Sarah Miller",
         "description": "Create cross-platform mobile apps using Flutter framework.",
-        "enrollmentStatus": "Open",
+        "enrollmentStatus": "false",
         "thumbnail": "your.image.here",
         "duration": "10 weeks",
         "schedule": "Wednesdays and Saturdays, 4:00 PM - 6:00 PM",
         "location": "Online",
+        "completeCourse": "none",
         "prerequisites": [
             "Dart programming basics"
         ],
@@ -139,11 +143,12 @@
         "name": "Machine Learning Fundamentals",
         "instructor": "Michael Turner",
         "description": "Explore the fundamentals of machine learning and predictive modeling.",
-        "enrollmentStatus": "Closed",
+        "enrollmentStatus": "false",
         "thumbnail": "your.image.here",
         "duration": "12 weeks",
         "schedule": "Mondays and Thursdays, 6:30 PM - 8:30 PM",
-        "location": "In-person",
+        "location": "Online",
+        "completeCourse": "none",
         "prerequisites": [
             "Python programming",
             "Basic statistics knowledge"
@@ -173,11 +178,12 @@
         "name": "Full Stack Web Development",
         "instructor": "Emma White",
         "description": "Master both frontend and backend development for building robust web applications.",
-        "enrollmentStatus": "Open",
+        "enrollmentStatus": "true",
         "thumbnail": "your.image.here",
         "duration": "16 weeks",
         "schedule": "Wednesdays and Saturdays, 5:00 PM - 7:00 PM",
         "location": "Online",
+        "completeCourse": "none",
         "prerequisites": [
             "HTML",
             "CSS",
@@ -208,11 +214,12 @@
         "name": "Artificial Intelligence Ethics",
         "instructor": "Sophia Lewis",
         "description": "Examine ethical considerations in artificial intelligence development and deployment.",
-        "enrollmentStatus": "Open",
+        "enrollmentStatus": "true",
         "thumbnail": "your.image.here",
         "duration": "10 weeks",
         "schedule": "Thursdays, 7:00 PM - 9:00 PM",
         "location": "Online",
+        "completeCourse": "done",
         "prerequisites": [
             "Basic understanding of artificial intelligence"
         ],
@@ -241,11 +248,12 @@
         "name": "Cybersecurity Essentials",
         "instructor": "David Smith",
         "description": "Learn fundamental concepts and techniques in cybersecurity.",
-        "enrollmentStatus": "In Progress",
+        "enrollmentStatus": "true",
         "thumbnail": "your.image.here",
         "duration": "8 weeks",
         "schedule": "Mondays and Wednesdays, 8:00 PM - 10:00 PM",
         "location": "Online",
+        "completeCourse": "done",
         "prerequisites": [
             "Basic computer knowledge"
         ],
@@ -266,6 +274,76 @@
                 "id": 801,
                 "name": "Mia Johnson",
                 "email": "mia@example.com"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Mobile Game Development with Unity",
+        "instructor": "Eva Martinez",
+        "description": "Create engaging mobile games using the Unity game development engine.",
+        "enrollmentStatus": "false",
+        "thumbnail": "your.image.here",
+        "duration": "12 weeks",
+        "schedule": "Tuesdays and Fridays, 6:30 PM - 8:30 PM",
+        "location": "Online",
+        "completeCourse": "none",
+        "prerequisites": [
+            "Basic programming knowledge",
+            "Familiarity with Unity"
+        ],
+        "syllabus": [
+            {
+                "week": 1,
+                "topic": "Introduction to Unity",
+                "content": "Overview of Unity game development environment."
+            },
+            {
+                "week": 2,
+                "topic": "Creating Your First Game",
+                "content": "Building a simple mobile game using Unity."
+            }
+        ],
+        "students": [
+            {
+                "id": 901,
+                "name": "Nathan Brown",
+                "email": "nathan@example.com"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Python Web Development",
+        "instructor": "Frank Rodriguez",
+        "description": "Learn web development using the Python programming language.",
+        "enrollmentStatus": "false",
+        "thumbnail": "your.image.here",
+        "duration": "14 weeks",
+        "schedule": "Mondays and Thursdays, 7:00 PM - 9:00 PM",
+        "location": "Online",
+        "completeCourse": "none",
+        "prerequisites": [
+            "Basic Python knowledge",
+            "HTML/CSS basics"
+        ],
+        "syllabus": [
+            {
+                "week": 1,
+                "topic": "Introduction to Django",
+                "content": "Getting started with the Django web framework."
+            },
+            {
+                "week": 2,
+                "topic": "Building a Blog Application",
+                "content": "Creating a simple blog using Django."
+            }
+        ],
+        "students": [
+            {
+                "id": 1001,
+                "name": "Aiden Martinez",
+                "email": "aiden@example.com"
             }
         ]
     }

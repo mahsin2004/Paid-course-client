@@ -10,13 +10,11 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase.config";
-import useAxiosSecure from "../hook/useAxiosSecure";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-  const axiosSecure = useAxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +26,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       unsubScribe();
     };
-  }, [user, axiosSecure]);
+  }, []);
 
   const googleUser = () => {
     setLoading(true);

@@ -107,7 +107,7 @@ const DashboardNavbar = () => {
                     </div>
                   </div>
                   <img
-                    className="w-[40px] border-4 border-white rounded-full"
+                    className="w-[40px] border-2 border-white rounded-full"
                     src={user?.photoURL}
                   ></img>
                 </div>
