@@ -6,8 +6,8 @@
 
 **Clone the repository:** 
 
-Change into the project directory: **cd Paid-course-client**
-Install dependencies: **npm install**
+Change into the project directory: **cd Paid-course-client** <br>
+Install dependencies: **npm install** ,br>
 start the development see your Localhost **npm run dev**
 
 
