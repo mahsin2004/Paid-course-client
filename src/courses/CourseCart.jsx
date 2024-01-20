@@ -45,7 +45,7 @@ const CourseCart = ({ course }) => {
                 </Link>
               </div>
               <div className="flex justify-center items-center py-2 text-base lg:text-lg font-medium bg-green-500  text-white rounded-lg hover:text-gray-600 cursor-pointer">
-                <button >{course.enrollmentStatus}</button>
+                <button >Buy Now</button>
               </div>
             </div>
           </div>

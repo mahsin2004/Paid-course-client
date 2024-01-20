@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Cart = ({ course }) => {
+const Cart1 = ({ course }) => {
   return (
     <div>
       <div className=" bg-white border shadow-sm">
         <div className="p-4 grid lg:grid-cols-7 gap-5 items-center justify-center">
           <div className="lg:col-span-3">
             <img
-              className="w-[350px] h-[220px] rounded-lg"
+              className="w-full h-full rounded-lg"
               src={course.thumbnail}
               alt="Thumbnail"
             />
@@ -32,8 +32,8 @@ const Cart = ({ course }) => {
                   <button>View Details</button>
                 </Link>
               </div>
-              <div className="flex justify-center items-center py-2 text-base lg:text-lg font-medium bg-green-500  text-white rounded-lg hover:text-gray-600 cursor-pointer">
-                <button>Buy Now</button>
+              <div className="flex justify-center items-center py-2 text-base lg:text-lg font-medium bg-red-500  text-white rounded-lg hover:text-gray-600 cursor-pointer">
+                <button>In Progress</button>
               </div>
             </div>
           </div>
@@ -43,8 +43,8 @@ const Cart = ({ course }) => {
   );
 };
 
-Cart.propTypes = {
+Cart1.propTypes = {
   course: PropTypes.object,
 };
 
-export default Cart;
+export default Cart1;

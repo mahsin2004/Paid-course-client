@@ -16,7 +16,7 @@ const ClientGuide = () => {
         </div>
         <div className="space-y-6 mt-10 lg:m-0">
           <h2 className="text-3xl lg:text-5xl font-semibold text-gray-700">
-          Specially crafted for every type of learner
+          For every type of learner
           </h2>
           <div className="space-y-2">
             <div className="flex gap-2">
